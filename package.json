@@ -1,0 +1,71 @@
+{
+  "author": {
+    "email": "paul@inc.sh",
+    "name": "Paul Anthony Webb"
+  },
+  "bugs": {
+    "url": "https://hub.socii.network/inc"
+  },
+  "dependencies": {
+    "apollo-server-core": "^2.1.0",
+    "apollo-server-module-graphiql": "^1.4.0",
+    "fastify-plugin": "^1.2.1"
+  },
+  "description": "Apollo server plugin for Fastify",
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/graphql": "^14.0.3",
+    "@types/mocha": "^5.2.5",
+    "@types/sinon": "^5.0.5",
+    "@types/supertest": "^2.0.6",
+    "apollo-server-module-operation-store": "^1.3.5",
+    "chai": "^4.2.0",
+    "chai-graphql": "^4.0.0",
+    "fastify": "^1.13.0",
+    "graphql": "^14.0.2",
+    "graphql-tools": "^4.0.3",
+    "mocha": "^5.2.0",
+    "npm-run-all": "^4.1.3",
+    "nyc": "^13.1.0",
+    "sinon": "^7.1.1",
+    "snazzy": "^8.0.0",
+    "standard-version": "^4.4.0",
+    "standardx": "^3.0.1",
+    "supertest": "^3.3.0",
+    "supertest-as-promised": "^4.0.2",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6",
+    "updates": "^5.1.2"
+  },
+  "engines": {
+    "node": ">=11.0.0",
+    "npm": ">=6.4.1"
+  },
+  "homepage": "https://git.inc.sh/IdeasNeverCease/fastify-graphql",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format && git add -A :/"
+    }
+  },
+  "keywords": [
+    "fastify",
+    "apollo",
+    "graphql"
+  ],
+  "license": "MIT",
+  "main": "out/FastifyGraphQL.js",
+  "name": "@inc/fastify-graphql",
+  "repository": {
+    "type": "git",
+    "url": "git+https://git.inc.sh/IdeasNeverCease/fastify-graphql.git"
+  },
+  "scripts": {
+    "prepare": "./node_modules/typescript/bin/tsc --extendedDiagnostics",
+    "release": "standard-version",
+    "test": "run-s test:*",
+    "test:dependencies": "updates -u ./",
+    "test:test": "./node_modules/mocha/bin/mocha $NODE_DEBUG_OPTION --require ts-node/register ./test/**/*.test.ts"
+  },
+  "typings": "out/FastifyGraphQL.d.ts",
+  "version": "5.0.0"
+}
